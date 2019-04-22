@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="https://yonatanberruecos.github.io/vueproject/src/assets/logo.png">
     <country @changee="getartist"></country>
     <ul><artis v-for="artist in artists" :artist="artist" :key="artist.name"></artis></ul>
     <loader v-show="loading"></loader>
@@ -37,6 +37,9 @@ export default {
                this.loading=false
         })
      }
+ },
+ beforeMount(){
+    this.getartist('argentina')
  }
 }
 </script>
